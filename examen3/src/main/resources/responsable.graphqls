@@ -1,0 +1,27 @@
+type Responsable {
+    id: ID!,
+    nombre: String,
+    cedula: String,
+    direccion: String,
+    telefonoPrimario: String,
+    telefonoSecundario: String
+}
+
+type Query {
+    responsables(count: Int):[Responsable],
+    responsable(id: ID): Responsable
+}
+
+type Mutation{
+    createResponsable(nombre: String!,
+                    cedula: String!,
+                    direccion: String,
+                    telefonoPrimario: String,
+                    telefonoSecundario: String): Responsable,
+    updateResponsable(id: ID!,
+                    nombre: String,
+                    cedula: String,
+                    direccion: String,
+                    telefonoPrimario: String,
+                    telefonoSecundario: String): Responsable
+}
